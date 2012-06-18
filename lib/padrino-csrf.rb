@@ -19,6 +19,7 @@ module Padrino
       def registered(app)
         app.helpers Helpers
         app.helpers FormHelpers
+		app.helpers AssetTagHelpers
         app.enable :prevent_request_forgery
 
         app.extend Routing
