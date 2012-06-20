@@ -6,7 +6,7 @@ module Padrino
 	  # @private
 	  def button_to(*args, &block)
 		name = args[0]
-		super(*args) { token_field_tag + submit_tag(name) }
+		super(*args) { token_field_tag + (block_given? ? capture_html(&block) : submit_tag(name)) }
 	  end
 	end
   end
